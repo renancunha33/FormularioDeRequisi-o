@@ -12,8 +12,9 @@ $efeitos     = $_POST["txtEfeitos"    ];
 $impacto     = $_POST["txtImpacto"    ];
 $setorimpacto     = $_POST["txtsetorImpact"    ];
 
-global $email; //transforma em variavel global a variavel e-mail ti.cbt@brado.com.br
-$enviou =   mail("ticbt@brado.com.br,$email", 
+global $email; //transforma em variavel global a variavel e-mail 
+//corpo do email a ser enviado pro setor de TI. Inserir email do TI no XXXX@xxxx.com
+$enviou =   mail("XXXX@xxxx.com,$email", 
                   utf8_decode("Solicitação de mudança: $titulo"),
    utf8_decode("
    Uma nova soliçitação de mudança foi gerada por um usuário da empresa.
