@@ -1,0 +1,142 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+</head>
+<body>
+<div class="container" id="divForm">
+<div class="form-group row">
+   <div class="col-xs-6">
+<h1>Requisição de mudança - TI</h1>
+<h4>Formulário para requisitar mudança de infraestrutura de TI</h4>
+ </div>
+  <div class="col-xs-2">
+  <img src="src/brado.jpeg" alt="Smiley face" height="100" width="130">
+  </div>
+</div>
+<form method="post" action="email.php">
+<div class="form-group row">
+   <div class="col-xs-8">
+   <h6><b>Caso prefira solicitação em papel, <a href="src/form.pdf" target="_blank">CLIQUE AQUI</a> para imprimir a requisição em pdf e entregar para a TI pessoalmente.</b></h6>
+      <input class="form-control" type="text"placeholder="Nome do solicitante" name="txtNomeSolicitante"id="txtNomeSolicitante" required>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <input class="form-control" type="text"placeholder="Email do solicitante" name="txtEmailSolicitante"id="txtEmailSolicitante" required>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-2">
+    Data da solicitação
+  </div>
+  <div class="col-xs-6">
+    <input class="form-control" type="date" id="dtSolicitacao"name="dtSolicitacao" required>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-xs-8">
+    <input class="form-control" type="number"  placeholder="Matrícula do solicitante" id="txtMatricula" name="txtMatricula">
+  </div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+  Setor
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetor"name="txtsetor"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>SIF</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
+  </select>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <input class="form-control" type="text"placeholder="Título da Mudança" name="txtTitulo"id="txtTitulo" required>
+  </div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2"> 
+  Origem da alteração
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtMotivo"name="txtMotivo"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>Melhoria de Funcionalidade</option>
+  <option>Mudança no(s) negócio(s)</option>
+  <option>Mudança na legislação</option>
+  <option>Correção de falha/preventiva</option>
+  <option>Outros</option>
+  </select>
+</div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <textarea class="form-control" rows="3"type="text"placeholder="Descrição da Mudança" name="txtDescricao"id="txtDescricao" required></textarea>
+  </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <textarea class="form-control" rows="3"type="text"placeholder="Efeitos da não implmentação da Mudança" name="txtEfeitos"id="txtEfeitos" required></textarea>
+ </div>
+</div>
+<div class="form-group row">
+   <div class="col-xs-8">
+      <textarea class="form-control" rows="3"type="text"placeholder="Impacto da Mudança" name="txtImpacto"id="txtImpacto" required></textarea>
+ </div>
+</div>
+<div class="form-group row">
+ <div class="col-xs-2">
+  Setor Impactado
+  </div>
+  <div class="col-xs-6">
+	<select class="form-control"id="txtsetorImpact"name="txtsetorImpact"required>
+	<option value="" selected disabled>Escolha uma opção</option>
+  <option>TI</option>
+  <option>PCM</option>
+  <option>SESMT</option>
+  <option>QA</option>
+  <option>SIF</option>
+  <option>TERMINAL</option>
+  <option>GERENCIA</option>
+  <option>OPERAÇÃO</option>
+  <option>RECEPÇÃO</option>
+  <option>RH/DP</option>
+  <option>MANUTENÇÃO</option>
+  <option>TERMINAL SECO</option>
+  <option>BALANÇA</option>
+  <option>ESTOQUE</option>
+  <option>FINANCEIRO</option>
+  <option>INTERMODAL</option>
+  <option>GATE</option>
+  <option>OUTRO</option>
+  </select>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-xs-8">
+ <input type="submit" name="EnviarSolicitacao" value="ENVIAR" class="btn btn-info btn-block"><br>
+ *Sua requisição será enviada por email para o Setor de TI da empresa.
+</div>
+</form>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
