@@ -12,10 +12,8 @@ $efeitos     = $_POST["txtEfeitos"    ];
 $impacto     = $_POST["txtImpacto"    ];
 $setorimpacto     = $_POST["txtsetorImpact"    ];
 
-global $email; //transforma em variavel global a variavel e-mail 
-//corpo do email a ser enviado pro setor de TI. Inserir email do TI no XXXX@xxxx.com
-$enviou =   mail("XXXX@xxxx.com,$email", 
-                  utf8_decode("Solicitação de mudança: $titulo"),
+global $email; //transforma em variavel global a variavel e-mail ti.cbt@brado.com.br
+$enviou =   mail("ticbt@brado.com.br,$email",utf8_decode("Solicitação de mudança: $titulo"),
    utf8_decode("
    Uma nova soliçitação de mudança foi gerada por um usuário da empresa.
    
@@ -31,20 +29,17 @@ $enviou =   mail("XXXX@xxxx.com,$email",
    Impacto caso não seja realizada:
    $impacto
    
-   Setor Impactado:$setorimpacto
+   Setor Impactado: $setorimpacto
    
    =================================================
    FAVOR ANALISAR OS DADOS E ENTRAR EM CONTATO DIRETAMENTE AO SOLICITANTE!"),"From: $email");
 if ($enviou)
 {
- echo "<script>javascript:alert('Email enviado!')</script>";
- echo "<script>javascript:location.href='index.html'</script>";
+ print "Email Enviado!";
 }
 else
 {
- echo "<script language=javascript>";
- echo "alert ('Erro,email nao enviado')";
- echo "</script>";
+ print "Erro, email nao enviado";
 }
 
 ?>

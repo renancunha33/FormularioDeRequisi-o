@@ -13,7 +13,7 @@
   <img src="src/brado.jpeg" alt="Smiley face" height="100" width="130">
   </div>
 </div>
-<form method="post" action="email.php">
+<form method="post" id="Form">
 <div class="form-group row">
    <div class="col-xs-8">
    <h6><b>Caso prefira solicitação em papel, <a href="src/form.pdf" target="_blank">CLIQUE AQUI</a> para imprimir a requisição em pdf e entregar para a TI pessoalmente.</b></h6>
@@ -139,4 +139,47 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function ajax(nome,email,data,matricula,setor,titulo,motivo,descricao,efeitos,impacto,setorimpacto){
+	info = {
+"txtNomeSolicitante": nome,
+"txtEmailSolicitante": email,
+"dtSolicitacao": data,
+"txtMatricula": matricula,
+"txtsetor": setor,
+"txtTitulo": titulo,
+"txtMotivo": motivo,
+"txtDescricao": descricao,
+"txtEfeitos": efeitos,
+"txtImpacto": impacto,
+"txtsetorImpact": setorimpacto
+};
+	$.ajax({
+	type:"post",
+	url:"email.php",
+	data: info,
+	success: function (response) {
+            alert(response);		
+			document.getElementById("Form").reset();			
+            }
+	});
+	return false;
+}
+$(document).ready(function(){
+	$("input[name=EnviarSolicitacao]").click(function(){
+	var nome     = $("[name=txtNomeSolicitante]").val();
+	var email     = $("[name=txtEmailSolicitante]").val();
+	var data     = $("[name=dtSolicitacao]").val();
+	var matricula     = $("[name=txtMatricula]").val();
+	var setor     = $("[name=txtsetor]").val();
+	var titulo     = $("[name=txtTitulo]").val();
+	var motivo     = $("[name=txtMotivo]").val();
+	var descricao     = $("[name=txtDescricao]").val();
+	var efeitos     = $("[name=txtEfeitos]").val();
+	var impacto     = $("[name=txtImpacto]").val();
+	var setorimpacto     = $("[name=txtsetorImpact]").val();
+	ajax(nome,email,data,matricula,setor,titulo,motivo,descricao,efeitos,impacto,setorimpacto);
+	});
+});
+</script>
 </html>
